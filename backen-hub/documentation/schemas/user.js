@@ -22,7 +22,7 @@ module.exports = {
       },
       email: {
         $ref: '#/components/schemas/userEmail'
-      },
+      }
     }
   },
   Users: {

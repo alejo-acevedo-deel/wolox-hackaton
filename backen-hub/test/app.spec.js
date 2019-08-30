@@ -5,7 +5,6 @@ const fs = require('fs');
 const path = require('path');
 const models = require('../app/models');
 
-
 const tables = Object.values(models.sequelize.models);
 
 const truncateTable = model =>
@@ -14,8 +13,7 @@ const truncateTable = model =>
 const truncateDatabase = () => Promise.all(tables.map(truncateTable));
 
 beforeEach(done => {
-  truncateDatabase()
-    .then(() => done());
+  truncateDatabase().then(() => done());
 });
 
 // including all test files
