@@ -1,0 +1,12 @@
+.module-form
+  label.module-text
+    | Clave Única
+  input.module-input(ng-model="$ctrl.module.unique_key")
+  label.module-text
+    | Nombre
+  input.module-input(ng-model="$ctrl.module.name")
+  label.module-text
+    | Descripción
+  input.module-input(ng-model="$ctrl.module.description")
+  button.add-button(ng-click='abmModule({ key: null })')
+    | Agregar

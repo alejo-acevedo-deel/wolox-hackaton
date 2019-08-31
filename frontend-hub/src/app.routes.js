@@ -1,17 +1,35 @@
 angular.module('app-bootstrap').config(['$stateProvider', '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
+      .state('navbar',
+      {
+        component: 'navbar',
+        abstract: true
+      }).state('navbar.abmModules',
+      {
+        url: '/abmModules',
+        component: 'abmModules',
+        params: {
+          key: null,
+          name: '',
+          description: '',
+          action: 0
+        }
+      }).state('navbar.home', {
         url: '/',
-        component: 'centered'
-      }).state('component1',
+        component: 'home'
+      }).state('navbar.modules',
       {
-        url: '/component1',
-        component: 'component1'
-      }).state('component2',
+        url: '/modules',
+        component: 'modules'
+      }).state('navbar.presets',
       {
-        url: '/component2',
-        component: 'component2'
+        url: '/presets',
+        component: 'presets'
+      }).state('navbar.stats',
+      {
+        url: '/stats',
+        component: 'stats'
       });
     $urlRouterProvider.otherwise('/');
   }
