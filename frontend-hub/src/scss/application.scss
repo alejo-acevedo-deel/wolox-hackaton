@@ -2,10 +2,44 @@
 
 @import 'variables/colors';
 
+@import 'variables/sizes';
+
 @import 'base';
 
 @import '../components/home/home';
 
-@import '../components/component1/component1';
+@import '../components/navbar/navbar';
 
-@import '../components/component2/component2';
+@import '../components/modules/modules';
+
+@import '../components/abmModules/abmModules';
+
+@import '../components/presets/presets';
+
+@import '../components/stats/stats';
+
+* {
+    font-family: 'Roboto', serif, 400;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  %robotoRegular {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  %robotoItalic {
+    @extend %robotoRegular;
+    font-style: italic;
+  }
+  
+  %robotoBold {
+    @extend %robotoRegular;
+    font-weight: 700;
+  }

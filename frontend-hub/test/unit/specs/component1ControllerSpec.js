@@ -2,19 +2,19 @@
 
 describe('Component 1', function () {
 
-  var component1Controller;
+  var modulesController;
 
   beforeEach(function () {
     module('app-bootstrap');
   });
 
   beforeEach(inject(function ($controller) {
-    component1Controller = $controller('Component1Controller', {});
+    modulesController = $controller('modulesController', {});
   }));
 
   it('gets components phrase', function () {
-    expect(component1Controller.component1Phrase).not.toBeNull();
-    expect(component1Controller.component1Phrase).toEqual('This is component 1');
+    expect(modulesController.modulesPhrase).not.toBeNull();
+    expect(modulesController.modulesPhrase).toEqual('This is component 1');
   });
 
 });

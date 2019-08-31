@@ -1,4 +1,4 @@
-const { Preset } = require('../models');
+const { presets: Preset } = require('../models');
 const { databaseError, badRequestError } = require('../errors');
 
 exports.createOne = body =>
@@ -20,7 +20,7 @@ exports.createOne = body =>
   });
 
 exports.getAll = () =>
-  Preset.getAll().catch(err => {
+  Preset.findAll().catch(err => {
     throw databaseError(err.message);
   });
 

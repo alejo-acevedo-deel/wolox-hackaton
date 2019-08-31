@@ -1,0 +1,32 @@
+.modules-list {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 2fr 3fr 1fr 70px 70px;
+  align-items: center;
+  margin: 50px 10px;
+}
+
+.module {
+  display: flex;
+  margin: 5px;
+}
+
+.module-title {
+  @extend %robotoBold;
+}
+
+.module-name {
+  @extend %robotoItalic;
+}
+
+.module-description {
+  @extend %robotoRegular;
+}
+
+.module-key {
+  @extend %robotoRegular;
+}
+
+.add-link {
+  margin: 0 auto;
+}
