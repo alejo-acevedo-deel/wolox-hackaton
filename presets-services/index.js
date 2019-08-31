@@ -2,6 +2,7 @@ const Redis = require('ioredis');
 const moment = require('moment');
 const redis = new Redis();
 const pubs = new Redis();
+const redisAction = new Redis();
 const schedule = require('node-schedule');
 const { modules: Module, presets: Presets } = require('../backen-hub/app/models');
 const config = require('../backen-hub/config');
@@ -35,14 +36,14 @@ setInterval(() => {
   const nowM = moment().minute();
   Presets.findAll({ where: { startHour: Number(nowH), startMinute: Number(nowM) } }).then(presets => {
     return presets.forEach(preset => {
-      console.log(`Publish message ${preset.actionStart}`);
-      pubs.publish(preset.modOut, preset.actionStart);
+      console.log(`Set message ${preset.actionStart}`);
+      redisAction.set(preset.modOut, preset.actionStart);
     });
   });
   return Presets.findAll({ where: { endHour: Number(nowH), endMinute: Number(nowM) } }).then(presets => {
     return presets.forEach(preset => {
-      console.log(`Publish message ${preset.actionEnd}`);
-      pubs.publish(preset.modOut, preset.actionEnd);
+      console.log(`Set message ${preset.actionEnd}`);
+      redisAction.set(preset.modOut, preset.actionEnd);
     });
   });
 }, getPresetsInterval);
@@ -65,12 +66,12 @@ redis.on('message', (channel, message) => {
     });
     return presetFiltered.forEach(preset => {
       if (Number(preset.level) < Number(message)) {
-        console.log(`Publish message ${preset.actionOn} to  module ${preset.modOut}`);
-        pubs.publish(preset.modOut, preset.actionOn);
+        console.log(`Set message ${preset.actionOn} to  module ${preset.modOut}`);
+        redisAction.set(preset.modOut, preset.actionOn);
       }
       if (Number(preset.level) > Number(message)) {
-        console.log(`Publish message ${preset.actionOff} to  module ${preset.modOut}`);
-        pubs.publish(preset.modOut, preset.actionOff);
+        console.log(`Set message ${preset.actionOff} to  module ${preset.modOut}`);
+        redisAction.set(preset.modOut, preset.actionOff);
       }
     });
   });
