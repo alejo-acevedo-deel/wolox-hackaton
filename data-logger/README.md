@@ -15,9 +15,9 @@ Run `npm install` or `yarn` from rootpath of the project.
 
 #### Database configuration
 
-Before running the app, make sure you have [InfluxDB installed](https://docs.influxdata.com/influxdb/v1.7/introduction/installation/) and a db created.
+Before running the app, make sure you have [InfluxDB installed](https://docs.influxdata.com/influxdb/v1.7/introduction/installation/). Influxdb is usually used as database to store time series recorded by sensors in a IoT system. 
 
-To install Influxdb run the following commands
+To install and init Influxdb run the following commands
 
 1. brew install influxdb
 2. To start influxDD run: `influxd`
@@ -26,6 +26,12 @@ To install Influxdb run the following commands
 Then, set in `.env` some variables:
 
 Now, to start your app run `npm start` in the rootpath of data-logger.
+
+## About
+
+This project is maintained by [Wolox](https://github.com/wolox) and it was written by [Wolox](http://www.wolox.com.ar).
+
+![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
 
 
 ## License
