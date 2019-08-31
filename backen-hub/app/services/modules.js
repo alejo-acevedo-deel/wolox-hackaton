@@ -1,19 +1,20 @@
-const { Module } = require('../models');
+const { modules: Module } = require('../models');
 const { databaseError, badRequestError } = require('../errors');
 
 exports.createOne = body =>
   Module.create({
     name: body.name,
-    descript: body.descript,
+    description: body.descript,
     uniqueKey: body.uniqueKey,
     new: true,
     ip: body.ip
   }).catch(err => {
     if (err.message === 'Validation error') throw badRequestError('Unique key alredy exist');
+    throw databaseError(err.message);
   });
 
 exports.getAll = () =>
-  Module.getAll().catch(err => {
+  Module.findAll().catch(err => {
     throw databaseError(err.message);
   });
 

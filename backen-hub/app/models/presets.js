@@ -7,24 +7,20 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       startHour: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'start_hour'
+        type: DataTypes.INTEGER,
+        allowNull: false
       },
       startMinute: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'start_minute'
+        type: DataTypes.INTEGER,
+        allowNull: false
       },
       endHour: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'end_hour'
+        type: DataTypes.INTEGER,
+        allowNull: false
       },
       endMinute: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'end_minute'
+        type: DataTypes.INTEGER,
+        allowNull: false
       },
       level: {
         type: DataTypes.INTEGER,
@@ -32,37 +28,31 @@ module.exports = (sequelize, DataTypes) => {
       },
       modIn: {
         type: DataTypes.STRING,
-        allowNull: false,
-        field: 'mod_in'
+        allowNull: false
       },
       modOut: {
         type: DataTypes.STRING,
-        allowNull: false,
-        field: 'mod_out'
+        allowNull: false
       },
       // Ejecuta siempre a la hora de inicio
       actionStart: {
         type: DataTypes.STRING,
-        allowNull: false,
-        field: 'action_end'
+        allowNull: false
       },
       // Ejecuta siempre a la hora de fin
       actionEnd: {
         type: DataTypes.STRING,
-        allowNull: false,
-        field: 'action_start'
+        allowNull: false
       },
       // Ejecuta siempre si el level supera al seteado
       actionOn: {
         type: DataTypes.STRING,
-        allowNull: false,
-        field: 'action_on'
+        allowNull: false
       },
       // Ejecuta siempre si el level esta por debajo del seteado
       actionOff: {
         type: DataTypes.STRING,
-        allowNull: false,
-        field: 'action_off'
+        allowNull: false
       },
       createdAt: {
         type: DataTypes.DATE,

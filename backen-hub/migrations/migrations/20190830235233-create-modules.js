@@ -23,10 +23,6 @@ module.exports = {
         allowNull: false,
         unique: true
       },
-      ip: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
       new: {
         type: Sequelize.BOOLEAN,
         allowNull: false

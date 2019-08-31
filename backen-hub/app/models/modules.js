@@ -13,8 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       uniqueKey: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
-        field: 'unique_key'
+        unique: true
       },
       new: {
         type: DataTypes.BOOLEAN,
