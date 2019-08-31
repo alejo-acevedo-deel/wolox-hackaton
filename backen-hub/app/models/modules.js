@@ -16,10 +16,6 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
         field: 'unique_key'
       },
-      ip: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
       new: {
         type: DataTypes.BOOLEAN,
         allowNull: false
