@@ -1,6 +1,14 @@
-.frontend-bootstrap-component-two
-  | {{ $ctrl.presetsPhrase }}
-.frontend-bootstrap-component-two
-  | {{ 'COMPO2.TITLE' | translate }}
-a.link(ui-sref='modules')
-  | Go to state1
+.presets-list
+    span.preset-title
+      | Nombre
+    span.preset-title
+    span.preset-title
+.presets-list(ng-repeat='preset in $ctrl.presets')    
+    span.preset-name
+      | {{preset.name}}
+    a.modify-link(ui-sref='navbar.abmPresets({ name: preset.name, startHour: preset.startHour, startMinute: preset.startMinute, endHour: preset.endHour, endMinute: preset.endMinute, level: preset.level, modIn: preset.modIn, modOut: preset.modOut, actionStart: preset.actionStart, actionEnd: preset.actionEnd, actionOn: preset. actionOn, actionOff: preset.actionOff })')
+      | Modificar
+    a.delete-link(ui-sref='$ctrl.deletePreset({name: preset.name})')
+      | Eliminar
+a.add-link(ui-sref='navbar.abmPresets()')
+  | Agregar

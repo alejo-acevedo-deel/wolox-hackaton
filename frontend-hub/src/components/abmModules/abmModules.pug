@@ -1,7 +1,7 @@
 .module-form
   label.module-text
     | Clave Única
-  input.module-input(ng-model="$ctrl.module.unique_key")
+  input.module-input(ng-model="$ctrl.module.uniqueKey" ng-disabled="{$ctrl.add}")
   label.module-text
     | Nombre
   input.module-input(ng-model="$ctrl.module.name")

@@ -1,0 +1,39 @@
+.module-form
+  label.module-text
+    | Nombre
+  input.module-input(ng-model="$ctrl.preset.name")
+  label.module-text
+    | Hora Inicio
+  input.module-input(ng-model="$ctrl.preset.startHour")
+  label.module-text
+    | Minuto Inicio
+  input.module-input(ng-model="$ctrl.preset.startMinute")
+  label.module-text
+    | Hora Fin
+  input.module-input(ng-model="$ctrl.preset.endHour")
+  label.module-text
+    | Minuto Fin
+  input.module-input(ng-model="$ctrl.preset.endMinute")
+  label.module-text
+    | Valor de Activación
+  input.module-input(ng-model="$ctrl.preset.level")
+  label.module-text
+    | Modulo Sensor
+  input.module-input(ng-model="$ctrl.preset.modIn")
+  label.module-text
+    | Modulo Actuador
+  input.module-input(ng-model="$ctrl.preset.modOut")
+  label.module-text
+    | Acción de Inicio por Hora
+  input.module-input(ng-model="$ctrl.preset.actionStart")
+  label.module-text
+    | Acción de Finalización por Hora
+  input.module-input(ng-model="$ctrl.preset.actionEnd")
+  label.module-text
+    | Acción de Encendido por Sensor
+  input.module-input(ng-model="$ctrl.preset.actionOn")
+  label.module-text
+    | Acción de Apagado por Sensor
+  input.module-input(ng-model="$ctrl.preset.actionOff")
+  button.add-button(ng-click='$ctrl.finish()')
+    | Agregar

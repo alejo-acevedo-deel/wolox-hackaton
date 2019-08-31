@@ -13,10 +13,10 @@
     span.module-description
       | {{module.description}}
     span.module-key
-      | {{module.unique_key}}
-    a.modify-link(ui-sref='navbar.abmModules({ key: module.unique_key, name: module.name, description: module.description })')
+      | {{module.uniqueKey}}
+    a.modify-link(ui-sref='navbar.abmModules({ uniqueKey: module.uniqueKey, name: module.name, description: module.description })')
       | Modificar
-    a.delete-link(ui-sref='$ctrl.deleteModule(module.unique_key)')
+    a.delete-link(ui-sref='$ctrl.deleteModule(module.uniqueKey)')
       | Eliminar
 a.add-link(ui-sref='navbar.abmModules()')
       | Agregar

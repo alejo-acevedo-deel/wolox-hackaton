@@ -10,10 +10,27 @@ angular.module('app-bootstrap').config(['$stateProvider', '$urlRouterProvider',
         url: '/abmModules',
         component: 'abmModules',
         params: {
-          key: null,
+          uniqueKey: null,
           name: '',
-          description: '',
-          action: 0
+          description: ''
+        }
+      }).state('navbar.abmPresets',
+      {
+        url: '/abmPresets',
+        component: 'abmPresets',
+        params: {
+          name: '',
+          startHour: 0,
+          startMinute: 0,
+          endHour: 0,
+          endMinute: 0,
+          level: '',
+          modIn: '',
+          modOut: '',
+          actionStart: ' ',
+          actionEnd: ' ',
+          actionOn: ' ',
+          actionOff: ' '
         }
       }).state('navbar.home', {
         url: '/',
