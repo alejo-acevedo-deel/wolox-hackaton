@@ -20,6 +20,6 @@ exports.modifyModule = (req, res, next) =>
 
 exports.deleteModule = (req, res, next) =>
   modulesServices
-    .deleteOne(req.param.uniqueKey)
+    .deleteOne(req.params.uniqueKey)
     .then(res.status(200).end())
     .catch(err => next(err));

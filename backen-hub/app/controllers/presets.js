@@ -14,6 +14,6 @@ exports.createPreset = (req, res, next) =>
 
 exports.deletePreset = (req, res, next) =>
   presetsServices
-    .deleteOne(req.param.uniqueKey)
+    .deleteOne(req.params.id)
     .then(res.status(200).end())
     .catch(err => next(err));
