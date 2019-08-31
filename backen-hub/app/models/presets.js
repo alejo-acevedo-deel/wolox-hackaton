@@ -7,22 +7,22 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       startHour: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'start_hour'
       },
       startMinute: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'start_minute'
       },
       endHour: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'end_hour'
       },
       endMinute: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'end_minute'
       },
@@ -36,31 +36,31 @@ module.exports = (sequelize, DataTypes) => {
         field: 'mod_in'
       },
       modOut: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'mod_out'
       },
       // Ejecuta siempre a la hora de inicio
       actionStart: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'action_end'
       },
       // Ejecuta siempre a la hora de fin
       actionEnd: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'action_start'
       },
       // Ejecuta siempre si el level supera al seteado
       actionOn: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'action_on'
       },
       // Ejecuta siempre si el level esta por debajo del seteado
       actionOff: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: false,
         field: 'action_off'
       },
