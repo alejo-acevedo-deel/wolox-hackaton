@@ -14,18 +14,61 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      description: {
+      startHour: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      startMinute: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      endHour: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      endMinute: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      level: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      modIn: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      uniqueKey: {
+      modOut: {
         type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
-      },
-      new: {
-        type: Sequelize.BOOLEAN,
         allowNull: false
+      },
+      // Ejecuta siempre a la hora de inicio
+      actionStart: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      // Ejecuta siempre a la hora de fin
+      actionEnd: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      // Ejecuta siempre si el level supera al seteado
+      actionOn: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      // Ejecuta siempre si el level esta por debajo del seteado
+      actionOff: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        field: 'created_at'
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        field: 'updated_at'
       },
       created_at: {
         allowNull: false,
