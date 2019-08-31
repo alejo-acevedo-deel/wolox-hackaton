@@ -8,7 +8,7 @@
 #define REDIS_PASSWORD  ""  
 
 #define LDR_PIN A0
-#define LED_PIN A0
+#define LED_PIN 1 // configurar con el pin del LED
 
 Redis redis(REDIS_ADDR, REDIS_PORT);
 
